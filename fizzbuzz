@@ -1,0 +1,14 @@
+for i in $(seq $1 $2)
+do
+	output=""
+	if (( $i % 3 != 0 && $i % 5 != 0 )); then
+		output="${output}$i"
+	fi
+	if (( $i % 3 == 0 )); then
+		output="${output}fizz"
+	fi
+	if (( $i % 5 == 0 )); then
+		output="${output}buzz"
+	fi
+	echo $output		
+done
